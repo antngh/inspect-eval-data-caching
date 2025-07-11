@@ -7,9 +7,11 @@ from pathlib import Path
 from typing import List, Literal, Optional
 
 from huggingface_hub import snapshot_download  # type: ignore
-from inspect_ai.dataset import Dataset, FieldSpec, json_dataset
+from inspect_ai.dataset import Dataset, FieldSpec
 from inspect_ai.solver import Generate, Solver, TaskState, solver
 from platformdirs import user_cache_dir
+
+from inspect_evals._utils.data_utils import json_dataset
 
 from .benchmark import (
     benign_tools,

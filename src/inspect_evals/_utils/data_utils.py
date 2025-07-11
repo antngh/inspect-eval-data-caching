@@ -86,7 +86,7 @@ def get_dir_name(args_kwargs_str: str) -> str:
     return f"{DATA_DIR}/{hash_obj.hexdigest()}"
 
 
-def save_metadata(save_dir, metadata: dict):
+def save_metadata(save_dir: Path, metadata: dict):
     """
     Save the metadata to a json file.
 
@@ -98,7 +98,7 @@ def save_metadata(save_dir, metadata: dict):
         json.dump(metadata, f, indent=2)
 
 
-def load_from_cache(save_dir) -> Dataset:
+def load_from_cache(save_dir: Path) -> Dataset:
     """
     Load the dataset from the cache.
 

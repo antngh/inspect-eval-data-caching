@@ -224,8 +224,9 @@ def dataset_from_source_function_getter(
     source_fn: Callable,
 ) -> Callable:
     """
-    A wrapper around _dataset_from_source which will either get the default version of the loader,
-    or the version that handles caching, depending on the CACHE_DATA flag.
+    A wrapper around _dataset_from_source
+
+    Will either get the default version of the loader, or the version that handles caching, depending on the CACHE_DATA flag.
 
     Args:
         source_fn: The function to wrap with caching logic. either csv_dataset or json_dataset from inspect_ai.dataset

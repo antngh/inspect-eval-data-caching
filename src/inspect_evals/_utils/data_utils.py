@@ -1,3 +1,12 @@
+"""
+This module contains the logic for caching datasets.
+
+import csv_dataset or json_dataset from here instead of inspect_ai.dataset if you want the data to be cached.
+The functionality should be identical but the data will be cached on the first call and then loaded from file on subsequent calls.
+
+The caches might build up over time, so you can delete the cached data by deleting the cached_data directory.
+"""
+
 import datetime
 import hashlib
 import inspect
@@ -161,6 +170,10 @@ def dataset_from_source(
 ) -> Dataset:
     """
     A wrapper around the source function that will either load the dataset from the cache or create it and save it to the cache.
+
+    Other than shuffle, seed, shuffle_choices and limit, all changes to args and kwargs will modify the hashing logic and will result in a
+    fresh collection of the data and being saved to a new cache. Warning that if using a default kwarg, but then you call the function with that
+    kwarg provided, even if it is the same as the default, it will be considered a different dataset and will be saved to a new cache.
 
     Args:
         source_fn: The function that creates the dataset either csv_dataset or json_dataset from inspect_ai.dataset

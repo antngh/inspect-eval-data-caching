@@ -27,7 +27,7 @@ from huggingface_hub import login as hf_login
 
 # Inspect imports
 from inspect_ai import Task, task
-from inspect_ai.dataset import Dataset, Sample, hf_dataset, json_dataset
+from inspect_ai.dataset import Dataset, Sample, hf_dataset
 from inspect_ai.dataset._dataset import MemoryDataset
 from inspect_ai.scorer import (
     CORRECT,
@@ -45,6 +45,8 @@ from inspect_ai.scorer import (
 from inspect_ai.solver import TaskState, multiple_choice, system_message
 from inspect_ai.solver._multiple_choice import parse_answers
 from platformdirs import user_cache_dir
+
+from inspect_evals._utils.data_utils import json_dataset
 
 # Project-specific import
 from inspect_evals.personality.prompts.system import get_system_prompt

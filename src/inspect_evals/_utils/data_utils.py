@@ -108,7 +108,7 @@ def load_from_cache(save_dir: Path) -> Dataset:
         save_dir: The directory to load the dataset from.
 
     Returns:
-        The dataset.
+        The dataset loaded from file.
     """
     if not save_dir.exists():
         raise FileNotFoundError(f"Cache directory {save_dir} not found")
@@ -185,7 +185,7 @@ def dataset_from_source(
         kwargs: The keyword arguments to the source function.
 
     Returns:
-        The dataset.
+        The dataset, either loaded from file or from source_fn, with shuffling and sampling applied.
     """
     args_kwargs_str = get_args_kwargs_str(*args, **kwargs)
     save_dir = Path(get_dir_name(args_kwargs_str))

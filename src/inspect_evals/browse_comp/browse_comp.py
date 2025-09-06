@@ -14,7 +14,6 @@ import numpy as np
 from inspect_ai import Task, task
 from inspect_ai import model as inspect_model
 from inspect_ai.agent import react, run
-from inspect_ai.dataset import csv_dataset
 from inspect_ai.scorer import (
     CORRECT,
     INCORRECT,
@@ -37,6 +36,7 @@ from inspect_ai.solver import (
 )
 from inspect_ai.tool import web_browser, web_search
 
+from inspect_evals._utils.data_utils import csv_dataset
 from inspect_evals.browse_comp.prompts import GRADER_TEMPLATE, QUERY_TEMPLATE
 from inspect_evals.browse_comp.utils import record_to_sample
 

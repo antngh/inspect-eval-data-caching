@@ -20,9 +20,11 @@ inspect eval inspect_evals/gpqa_diamond -T cot=false
 from typing import Any
 
 from inspect_ai import Task, task
-from inspect_ai.dataset import Sample, csv_dataset
+from inspect_ai.dataset import Sample
 from inspect_ai.scorer import choice
 from inspect_ai.solver import multiple_choice
+
+from inspect_evals._utils.data_utils import csv_dataset
 
 # default epochs to run eval for
 DEFAULT_EPOCHS = 4
